@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Iec</title>
+    <title>IEC</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,13 +18,15 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
     <!-- Third party plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
   </head>
 
   <body id="page-top">
     <%= yield %>
 
     <footer class="bg-light py-5">
-      <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+      <div class="container"><div class="small text-center text-muted">Copyright © 2021 - Western Engineering Innovation and Entrepreneurship Club</div></div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -95,6 +97,17 @@
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     }
   });
+
+  // Splash page words animation
+  let words = ["#word-1", "#word-2", "#word-3", ".animated-sub"];
+  function display(i) {
+    console.log("displaying " + i);
+    $(words[i]).addClass('fadeInUp');
+    if (i < words.length - 1){
+      setTimeout(() => {display(i+1)}, 1000)
+    }
+  }
+  display(0);
 
 })(jQuery); // End of use strict
     </script>
